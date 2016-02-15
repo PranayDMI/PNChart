@@ -20,11 +20,17 @@ typedef NS_ENUM(NSUInteger, PNLegendItemStyle) {
     PNLegendItemStyleSerial = 1
 };
 
+typedef NS_ENUM(NSUInteger, PNLegendItemPointStyle) {
+  PNLegendItemPointStyleCircle = 0,
+  PNLegendItemPointStyleSquare = 1
+};
+
 @interface PNGenericChart : UIView
 
 @property (assign, nonatomic) BOOL hasLegend;
 @property (assign, nonatomic) PNLegendPosition legendPosition;
 @property (assign, nonatomic) PNLegendItemStyle legendStyle;
+@property (assign, nonatomic) PNLegendItemPointStyle legendPointStyle;
 
 @property (assign, nonatomic) UIFont *legendFont;
 @property (assign, nonatomic) UIColor *legendFontColor;

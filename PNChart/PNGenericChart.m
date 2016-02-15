@@ -28,6 +28,7 @@
     self.hasLegend = YES;
     self.legendPosition = PNLegendPositionBottom;
     self.legendStyle = PNLegendItemStyleStacked;
+    self.legendPointStyle = PNLegendItemPointStyleCircle;
     self.labelRowsInSerialMode = 1;
     self.displayAnimated = YES;
 }

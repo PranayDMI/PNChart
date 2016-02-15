@@ -172,6 +172,7 @@
         
         
         self.pieChart.legendStyle = PNLegendItemStyleStacked;
+        self.pieChart.legendPointStyle = PNLegendItemPointStyleSquare;
         self.pieChart.legendFont = [UIFont boldSystemFontOfSize:12.0f];
         
         UIView *legend = [self.pieChart getLegendWithMaxWidth:200];

@@ -465,10 +465,14 @@
     
     UIGraphicsBeginImageContextWithOptions(aSize, NO, 0.0);
     CGContextRef context = UIGraphicsGetCurrentContext();
-    
-    CGContextAddArc(context, size/2, size/ 2, size/2, 0, M_PI*2, YES);
-    
-    
+  
+    if (self.legendPointStyle == PNLegendItemPointStyleSquare) {
+      CGContextAddRect(context, CGRectMake(0, 0, size, size));
+    } else {
+      //PNLegendItemPointStyleCircle
+      CGContextAddArc(context, size/2, size/ 2, size/2, 0, M_PI*2, YES);
+    }
+  
     //Set some fill color
     CGContextSetFillColorWithColor(context, color.CGColor);
     
