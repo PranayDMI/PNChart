@@ -153,11 +153,23 @@
     NSString *titleValue;
     
     if (self.showAbsoluteValues) {
-        titleValue = [NSString stringWithFormat:@"%.0f",currentDataItem.value];
+        CGFloat ratioVal = currentDataItem.value;
+        ratioVal = ceilf(ratioVal * 100) / 100;
+        if (ratioVal == (int)ratioVal) {
+          titleValue = [NSString stringWithFormat:@"%.0f%%",ratioVal];
+        } else {
+          titleValue = [NSString stringWithFormat:@"%.1f%%",ratioVal];
+        }
     }else{
-        titleValue = [NSString stringWithFormat:@"%.0f%%",[self ratioForItemAtIndex:index] * 100];
+        CGFloat ratioVal = [self ratioForItemAtIndex:index] * 100;
+        ratioVal = ceilf(ratioVal * 100) / 100;
+        if (ratioVal == (int)ratioVal) {
+          titleValue = [NSString stringWithFormat:@"%.0f%%",ratioVal];
+        } else {
+          titleValue = [NSString stringWithFormat:@"%.1f%%",ratioVal];
+        }
     }
-    
+  
     if (self.hideValues)
         descriptionLabel.text = titleText;
     else if(!titleText || self.showOnlyValues)
