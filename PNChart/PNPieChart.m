@@ -154,15 +154,27 @@
     
     if (self.showAbsoluteValues) {
         CGFloat ratioVal = currentDataItem.value;
-        ratioVal = ceilf(ratioVal * 100) / 100;
+        //ratioVal = ceilf(ratioVal * 100) / 100;
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        formatter.numberStyle = NSNumberFormatterDecimalStyle;
+        formatter.maximumFractionDigits = 2;  //Set number of fractional digits
+        NSNumber *num = [NSNumber numberWithFloat:ratioVal];
+        NSString *roundedNum = [formatter stringFromNumber:num];
+        ratioVal = [roundedNum floatValue];
         if (ratioVal == (int)ratioVal) {
           titleValue = [NSString stringWithFormat:@"%.0f%%",ratioVal];
         } else {
           titleValue = [NSString stringWithFormat:@"%.1f%%",ratioVal];
         }
-    }else{
+    } else {
         CGFloat ratioVal = [self ratioForItemAtIndex:index] * 100;
-        ratioVal = ceilf(ratioVal * 100) / 100;
+        //ratioVal = ceilf(ratioVal * 100) / 100;
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        formatter.numberStyle = NSNumberFormatterDecimalStyle;
+        formatter.maximumFractionDigits = 2;  //Set number of fractional digits
+        NSNumber *num = [NSNumber numberWithFloat:ratioVal];
+        NSString *roundedNum = [formatter stringFromNumber:num];
+        ratioVal = [roundedNum floatValue];
         if (ratioVal == (int)ratioVal) {
           titleValue = [NSString stringWithFormat:@"%.0f%%",ratioVal];
         } else {

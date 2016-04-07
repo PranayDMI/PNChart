@@ -19,6 +19,7 @@
                       description:(NSString *)description;
 
 @property (nonatomic) CGFloat   value;
+@property (nonatomic) CGFloat   checkValue;
 @property (nonatomic) UIColor  *color;
 @property (nonatomic) NSString *textDescription;
 
