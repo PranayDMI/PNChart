@@ -164,7 +164,7 @@
         if (ratioVal == (int)ratioVal) {
           titleValue = [NSString stringWithFormat:@"%.0f%%",ratioVal];
         } else {
-          titleValue = [NSString stringWithFormat:@"%.1f%%",ratioVal];
+          titleValue = [NSString stringWithFormat:@"%.2f%%",ratioVal];
         }
     } else {
         CGFloat ratioVal = [self ratioForItemAtIndex:index] * 100;
@@ -178,7 +178,7 @@
         if (ratioVal == (int)ratioVal) {
           titleValue = [NSString stringWithFormat:@"%.0f%%",ratioVal];
         } else {
-          titleValue = [NSString stringWithFormat:@"%.1f%%",ratioVal];
+          titleValue = [NSString stringWithFormat:@"%.2f%%",ratioVal];
         }
     }
   
